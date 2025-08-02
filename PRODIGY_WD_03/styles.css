@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg,  #ea63e1, #928dab);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.game-container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.board-wrapper {
+  position: relative;
+  width: 312px;
+  margin: 0 auto;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 6px;
+  position: relative;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: #0c0101;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  transition: white 0.3s;
+}
+
+.cell:hover {
+  background-color: white#f0f0f0f4;
+}
+
+.cell.x {
+  color: #3498db;
+}
+
+.cell.o {
+  color: #e74c3c;
+}
+
+#statusMessage {
+  margin: 15px 0;
+  font-size: 1.2rem;
+  color: #051525;
+}
+
+#restartButton {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #3498db38;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#restartButton:hover {
+  background-color: #2980b9;
+}
+
+/* ✨ Winning Line */
+.win-line {
+  position: absolute;
+  background-color: #f389cf;
+  height: 3px;
+  width: 0;
+  top: 0;
+  left: 0;
+  transform-origin: left center;
+  transition: width 0.5s ease, transform 0.5s ease;
+  z-index: 1;
+  border-radius: 4px;
+}
